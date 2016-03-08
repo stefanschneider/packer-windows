@@ -10,7 +10,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "6h",
-      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "shutdown_command": "a:/PackerShutdown.bat",
       "guest_os_type": "windows8srv-64",
       "tools_upload_flavor": "windows",
       "disk_size": 61440,
@@ -20,7 +20,9 @@
         "{{user `autounattend`}}",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
-        "./scripts/openssh.ps1"
+        "./scripts/openssh.ps1",
+        "./scripts/postunattend.xml",
+        "./scripts/PackerShutdown.bat"
       ],
       "vmx_data": {
         "RemoteDisplay.vnc.enabled": "false",
@@ -40,7 +42,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "6h",
-      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "shutdown_command": "a:/PackerShutdown.bat",
       "guest_os_type": "Windows2012_64",
       "disk_size": 61440,
       "floppy_files": [
@@ -48,7 +50,9 @@
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/openssh.ps1",
-        "./scripts/oracle-cert.cer"
+        "./scripts/oracle-cert.cer",
+        "./scripts/postunattend.xml",
+        "./scripts/PackerShutdown.bat"
       ],
       "vboxmanage": [
         [
@@ -90,9 +94,6 @@
     }
   ],
   "variables": {
-    "iso_url": "http://download.microsoft.com/download/6/2/A/62A76ABB-9990-4EFC-A4FE-C7D698DAEB96/9600.16384.WINBLUE_RTM.130821-1623_X64FRE_SERVER_EVAL_EN-US-IRM_SSS_X64FREE_EN-US_DV5.ISO",
-    "iso_checksum_type": "md5",
-    "iso_checksum": "458ff91f8abc21b75cb544744bf92e6a",
     "autounattend": "./answer_files/2012_r2/Autounattend.xml"
   }
 }
