@@ -233,6 +233,11 @@
                     <Order>22</Order>
                     <Description>Disable password expiration for vagrant user</Description>
                 </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c powershell -Command "Install-WindowsFeature   Web-Webserver, Web-WebSockets, AS-Web-Support, AS-NET-Framework, Web-WHC, Web-ASP,  Web-Net-Ext, Web-AppInit,  PowerShell, PowerShell-V2"</CommandLine>
+                    <Order>23</Order>
+                    <Description>Insta extra Windows Features</Description>
+                </SynchronousCommand>
                 <!-- WITHOUT WINDOWS UPDATES -->
                 <!--
                 <SynchronousCommand wcm:action="add">
