@@ -44,6 +44,7 @@
       "ssh_wait_timeout": "6h",
       "shutdown_command": "a:/PackerShutdown.bat",
       "guest_os_type": "Windows2012_64",
+      "hard_drive_interface": "sata",
       "disk_size": 61440,
       "floppy_files": [
         "{{user `autounattend`}}",
